@@ -39,4 +39,4 @@ FREEPORTS_REPO="/home/developer"
 SOPS_AGE_KEY_FILE="${FREEPORTS_REPO}/secrets/age.key"
 SOPS_AGE_RECIPIENTS="$(age-keygen -y ${SOPS_AGE_KEY_FILE})"
 
-neofetch
+#neofetch

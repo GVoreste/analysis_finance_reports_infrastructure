@@ -14,4 +14,4 @@ ENV XDG_CACHE_HOME /tmp/xdg_cache
 ENV XDG_DATA_HOME /tmp/xdg_data
 ENV XDG_STATE_HOME /tmp/xdg_state
 ENV FREEPORTS_VENV 1
-ENTRYPOINT ["/bin/bash","--login"]
+ENTRYPOINT ["/bin/bash"]

@@ -1,0 +1,42 @@
+#! /bin/bash
+
+#
+# ~/.bashrc
+#
+
+# if ! pgrep -u "$USER" ssh-agent > /dev/null; then
+#     ssh-agent -t 4h > "$XDG_RUNTIME_DIR/ssh-agent.env"
+# fi
+# if [[ ! -f "$SSH_AUTH_SOCK" ]]; then
+#     source "$XDG_RUNTIME_DIR/ssh-agent.env" >/dev/null
+# fi
+
+
+
+source /usr/share/git/completion/git-prompt.sh
+
+GREEN='\033[32m'
+DEF='\033[0m'
+BLUE_BLD='\033[1;34m'
+BLUE_BLK_BLD='\033[1;5;34m'
+RED_NOBLK_BLD='\033[1;25;31m'
+
+
+alias ls='ls --color=auto'
+alias grep='grep --color=auto'
+alias htop='bashtop'
+alias vim='nvim'
+
+EDITOR='nvim'
+GIT_PS1_SHOWDIRTYSTATE=' '
+GIT_PS1_SHOWSTASHSTATE=' '
+GIT_PS1_SHOWUNTRACKEDFILES=' '
+GIT_PS1_SHOWUPSTREAM="auto"
+GIT_PS1_SHOWCOLORHINTS=''
+PS1=$GREEN'┏━❰\u@\h \W❱\n┗$(__git_ps1 "━━$BLUE_BLD ❴$RED_NOBLK_BLD%s$BLUE_BLD❵ ")'$DEF$GREEN'━━'$BLUE_BLD' ➤ '$DEF
+
+FREEPORTS_REPO="/home/developer"
+SOPS_AGE_KEY_FILE="${FREEPORTS_REPO}/secrets/age.key"
+SOPS_AGE_RECIPIENTS="$(age-keygen -y ${SOPS_AGE_KEY_FILE})"
+
+neofetch

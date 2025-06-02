@@ -1,0 +1,30 @@
+#!/bin/bash
+source contrib/.env
+
+if [ ! -f "${FREEPORTS_REPO}/activate-venv" ]; then
+  echo "ABORTED! It is mandatory to setup the repository with .delphy-venv/setup"
+  exit 1
+fi
+
+cat ${FREEPORTS_VENV_SRC}/ascii-arts/activate.txt
+
+podman run -it \
+--device /dev/dri \
+--env DISPLAY \
+--env DBUS_SESSION_BUS_ADDRESS \
+--mount "type=tmpfs,tmpfs-mode=777,destination=/tmp" \
+-v "${FREEPORTS_REPO}:/home/developer" \
+-v "/tmp/.X11-unix:/tmp/.X11-unix" \
+-v "/run/user:/run/user" \
+-v "/run/dbus:/run/dbus" \
+-v "${FREEPORTS_BIND_FILES_DIR}/bashrc:/home/developer/.bashrc" \
+-v "${HOME}/.ssh:/home/developer/.ssh" \
+--network "host" \
+--hostname "freeports-venv" \
+--read-only \
+--user 1000:1000 \
+--workdir /home/developer \
+--userns=keep-id \
+--rm \
+--name "${FREEPORTS_VENV_CONTAINER_NAME}" \
+"${FREEPORTS_VENV_IMG_NAME}:${FREEPORTS_VENV_TAG}"

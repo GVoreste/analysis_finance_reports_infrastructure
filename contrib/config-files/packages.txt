@@ -1,0 +1,15 @@
+openssh
+git
+base-devel
+code
+firefox
+neofetch
+nvim
+bashtop
+age
+sops
+helm
+kubectl
+talosctl
+virtualbox-host-modules-arch
+virtualbox

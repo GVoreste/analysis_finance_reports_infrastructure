@@ -1,0 +1,10 @@
+.vscode-oss/
+.pki/
+.config/
+.cache/
+.mozilla/
+.bash_history
+.ssh
+.bashrc
+secrets/
+/activate-venv

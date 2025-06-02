@@ -1,0 +1,11 @@
+*.yaml filter=sops-regex
+*.yml filter=sops-regex
+*.secret filter=age
+*.secrets filter=age
+*.secret.* filter=age
+*.secrets.* filter=age
+*.secrets.yaml filter=sops
+*.secrets.yml filter=sops
+*.secret.yaml filter=sops
+*.secret.yml filter=sops
+**/*encrypt*/** filter=age

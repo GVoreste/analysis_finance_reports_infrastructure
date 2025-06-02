@@ -1,0 +1,4 @@
+.freeports-venv-linux/
+.oci-freeports-venv-image/
+*.debug.json
+.env

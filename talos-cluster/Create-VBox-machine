@@ -1,8 +1,8 @@
 #!/bin/bash
-export DELPHY_TALOS_DIR="${DELPHY_REPO}/talos-cluster"
-export DELPHY_VMs_DIR="${DELPHY_TALOS_DIR}/.Virtual-Machines"
-export DELPHY_VM_NAME="Talos-dev-cluster"
-VBoxManage createvm --name="${DELPHY_VM_NAME}" --basefolder "${DELPHY_VMs_DIR}" --ostype="Linux_64"
+export FREEPORTS_TALOS_DIR="${FREEPORTS_REPO}/talos-cluster"
+export FREEPORTS_VMs_DIR="${FREEPORTS_TALOS_DIR}/.Virtual-Machines"
+export FREEPORTS_VM_NAME="Talos-dev-cluster"
+VBoxManage createvm --name="${FREEPORTS_VM_NAME}" --basefolder "${FREEPORTS_VMs_DIR}" --ostype="Linux_64"
 
 
-VBoxManage registervm "${DELPHY_VMs_DIR}/${DELPHY_VM_NAME}.vbox"
+VBoxManage registervm "${FREEPORTS_VMs_DIR}/${FREEPORTS_VM_NAME}.vbox"

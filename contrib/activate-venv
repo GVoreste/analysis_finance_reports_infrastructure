@@ -27,4 +27,4 @@ podman run -it \
 --userns=keep-id \
 --rm \
 --name "${FREEPORTS_VENV_CONTAINER_NAME}" \
-"${FREEPORTS_VENV_IMG_NAME}:${FREEPORTS_VENV_TAG}" /bin/bash --login
+"${FREEPORTS_VENV_IMG_NAME}:${FREEPORTS_VENV_TAG}"
